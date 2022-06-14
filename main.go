@@ -6,9 +6,9 @@ import (
 	"log"
 
 	_ "github.com/go-sql-driver/mysql"
-	dbc "github.globant.com/mateo-tavera/shoppingCart/dbConnection"
-	class "github.globant.com/mateo-tavera/shoppingCart/entity"
-	server "github.globant.com/mateo-tavera/shoppingCart/serverConnection"
+	dbc "github.com/mateo-tavera/shoppingCart/dbConnection"
+	class "github.com/mateo-tavera/shoppingCart/entity"
+	server "github.com/mateo-tavera/shoppingCart/serverConnection"
 )
 
 var Db *sql.DB

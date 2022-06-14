@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strconv"
 
-	dbc "github.globant.com/mateo-tavera/shoppingCart/dbConnection"
+	dbc "github.com/mateo-tavera/shoppingCart/dbConnection"
 
 	"github.com/gorilla/mux"
 )

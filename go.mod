@@ -1,4 +1,4 @@
-module github.globant.com/mateo-tavera/shoppingCart
+module github.com/mateo-tavera/shoppingCart
 
 go 1.18
 

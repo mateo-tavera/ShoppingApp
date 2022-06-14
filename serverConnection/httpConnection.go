@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.globant.com/mateo-tavera/shoppingCart/entity"
+	"github.com/mateo-tavera/shoppingCart/entity"
 )
 
 func GetServerConnection() {

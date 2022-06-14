@@ -6,7 +6,7 @@ import (
 	"log"
 	"net/http"
 
-	dbc "github.globant.com/mateo-tavera/shoppingCart/dbConnection"
+	dbc "github.com/mateo-tavera/shoppingCart/dbConnection"
 )
 
 type ArticleList struct {
