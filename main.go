@@ -7,8 +7,8 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	dbc "github.com/mateo-tavera/shoppingCart/dbConnection"
-	class "github.com/mateo-tavera/shoppingCart/entity"
 	server "github.com/mateo-tavera/shoppingCart/serverConnection"
+	svc "github.com/mateo-tavera/shoppingCart/service"
 )
 
 var Db *sql.DB
@@ -35,20 +35,20 @@ func main() {
 	}
 
 	//Get the list of articles provided from API
-	addItems := class.GetArticles()
+	addItems := svc.GetArticles()
 	//Add articles manually
-	var items []class.ArticleList
+	var items []svc.ArticleList
 	items = addItems(3, 3)
 	items = addItems(4, 4)
 	items = addItems(2, 0)
 	items = addItems(1, 4)
 
 	//Data to create a cart manually
-	class.CartList = append(class.CartList, class.Cart{
+	svc.CartList = append(svc.CartList, svc.Cart{
 		IdCart: "1",
 		Items:  items})
 
-	class.CartList = append(class.CartList, class.Cart{
+	svc.CartList = append(svc.CartList, svc.Cart{
 		IdCart: "2",
 		Items:  items})
 
