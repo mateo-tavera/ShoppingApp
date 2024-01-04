@@ -45,13 +45,13 @@ func GetArticles() func(qty, item int) []ArticleList {
 	}
 
 	SentToDatabase(listOfArticles)
-	var items4Cart []ArticleList
+	var itemsForCart []ArticleList
 
 	//Now that we have the list, we select which and how many articles we want
 	return func(qty, item int) []ArticleList {
 		listOfArticles[item].Qty = qty
-		items4Cart = append(items4Cart, listOfArticles[item])
-		return items4Cart
+		itemsForCart = append(itemsForCart, listOfArticles[item])
+		return itemsForCart
 	}
 
 }
