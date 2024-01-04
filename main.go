@@ -41,6 +41,8 @@ func main() {
 	items = addItems(3, 3)
 	items = addItems(4, 4)
 	items = addItems(2, 0)
+	items = addItems(2, 0)
+	items = addItems(2, 0)
 	items = addItems(1, 4)
 
 	//Data to create a cart manually
