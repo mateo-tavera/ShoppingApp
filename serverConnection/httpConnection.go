@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/mateo-tavera/shoppingCart/entity"
+	svc "github.com/mateo-tavera/shoppingCart/service"
 )
 
 func GetServerConnection() {
@@ -14,11 +14,11 @@ func GetServerConnection() {
 	r := mux.NewRouter()
 
 	//Route handlers / Endpoints
-	r.HandleFunc("/api/shopping-cart", entity.GetCarts).Methods("GET")
-	r.HandleFunc("/api/shopping-cart/{id}", entity.GetCart).Methods("GET")
-	r.HandleFunc("/api/shopping-cart", entity.CreateCart).Methods("POST")
-	r.HandleFunc("/api/shopping-cart/{id}", entity.UpdateCart).Methods("PUT")
-	r.HandleFunc("/api/shopping-cart/{id}", entity.DeleteCart).Methods("DELETE")
+	r.HandleFunc("/api/shopping-cart", svc.GetCarts).Methods(http.MethodGet)
+	r.HandleFunc("/api/shopping-cart/{id}", svc.GetCart).Methods(http.MethodGet)
+	r.HandleFunc("/api/shopping-cart", svc.CreateCart).Methods(http.MethodPost)
+	r.HandleFunc("/api/shopping-cart/{id}", svc.UpdateCart).Methods(http.MethodPut)
+	r.HandleFunc("/api/shopping-cart/{id}", svc.DeleteCart).Methods(http.MethodDelete)
 
 	//Initilize the server
 	fmt.Println("Listening...")

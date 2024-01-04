@@ -1,4 +1,4 @@
-package entity
+package service
 
 import (
 	"encoding/json"
@@ -17,16 +17,16 @@ type Cart struct {
 	Items  []ArticleList `json:"items"`
 }
 
-//Init cart variable
+// Init cart variable
 var CartList []Cart
 
-//Get all carts
+// Get all carts
 func GetCarts(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(CartList)
 }
 
-//Get single cart
+// Get single cart
 func GetCart(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r) //Get parameters
@@ -40,7 +40,7 @@ func GetCart(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(&Cart{})
 }
 
-//Create a new cart
+// Create a new cart
 func CreateCart(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	var cart Cart
@@ -68,7 +68,7 @@ func CreateCart(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-//Update a cart
+// Update a cart
 func UpdateCart(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
@@ -108,7 +108,7 @@ func UpdateCart(w http.ResponseWriter, r *http.Request) {
 
 }
 
-//Delete a cart
+// Delete a cart
 func DeleteCart(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
